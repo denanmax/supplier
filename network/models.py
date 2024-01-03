@@ -37,7 +37,7 @@ class Supplier(models.Model):
     supplier = models.CharField(choices=supplier_choice, verbose_name='Статус поставщика')
 
     def __str__(self):
-        return f'Supplier - {self.title} from {self.country} -{self.city}'
+        return f'{self.title} from {self.country} -{self.city}'
 
     class Meta:
         verbose_name = 'Поставщик'
@@ -61,7 +61,7 @@ class Product(models.Model):
 
 
 class Delivery(models.Model):
-    """Поставщик"""
+    """Поставка"""
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Товар')
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, verbose_name='Производитель')
