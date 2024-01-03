@@ -4,12 +4,15 @@ from network.apps import NetworkConfig
 
 from network.views import (ManufacturerAPIView, ManufacturerCreateAPIView,
                            ManufacturerRetrieveAPIView, ManufacturerUpdateAPIView, ManufacturerDestroyAPIView,
-                           SupplierViewSet)
+                           SupplierViewSet, ProductViewSet, DeliveryViewSet, )
 
 app_name = NetworkConfig.name
 
 router = DefaultRouter()
 router.register(r'supplier', SupplierViewSet, basename='supplier')
+router.register(r'product', ProductViewSet, basename='supplier')
+router.register(r'delivery', DeliveryViewSet, basename='supplier')
+
 urlpatterns = [
 
                   path('manufacturer/', ManufacturerAPIView.as_view(), name='manufacturer_list'),
