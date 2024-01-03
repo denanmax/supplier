@@ -34,7 +34,7 @@ class Supplier(models.Model):
     city = models.CharField(max_length=50, verbose_name='Город')
     street = models.CharField(max_length=20, verbose_name='Улица')
     building = models.CharField(max_length=100, verbose_name='Номер дома')
-    supplier = models.CharField(choices=supplier_choice, verbose_name='Тип поставщика')
+    supplier = models.CharField(choices=supplier_choice, verbose_name='Статус поставщика')
 
     def __str__(self):
         return f'Supplier - {self.title} from {self.country} -{self.city}'
