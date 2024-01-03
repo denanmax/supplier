@@ -4,15 +4,16 @@ from users.models import User
 
 
 class Command(BaseCommand):
+    """Создание обычного поьзователя"""
 
     def handle(self, *args, **options):
         user = User.objects.create(
             email='no@rights.com',
             name='Denis',
             phone='+79876543210',
-            is_staff=False,
+            is_staff=True,
             is_superuser=False,
-            is_active=False
+            is_active=True
 
         )
 
